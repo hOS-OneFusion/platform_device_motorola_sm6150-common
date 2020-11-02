@@ -129,11 +129,29 @@ $(EXPAT_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(dir $@)
 	$(hide) ln -sf motobox $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(EXPAT_SYMLINKS)
-
 $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr: $(wildcard $(PRODUCT_VENDOR_KERNEL_HEADERS)/*)
 	rm -rf $@
 	mkdir -p $@/include
 	cp -a $(PRODUCT_VENDOR_KERNEL_HEADERS)/. $@/include
 
+ALL_DEFAULT_INSTALLED_MODULES += $(EXPAT_SYMLINKS)
+
+EGL_LIBS := libEGL_adreno.so libGLESv2_adreno.so libq3dtools_adreno.so
+EGL_32_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib/,$(notdir $(EGL_LIBS)))
+$(EGL_32_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL 32 lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+EGL_64_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib64/,$(notdir $(EGL_LIBS)))
+$(EGL_64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_32_SYMLINKS) $(EGL_64_SYMLINKS)
+
 endif
+
