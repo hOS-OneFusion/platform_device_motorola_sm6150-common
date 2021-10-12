@@ -52,6 +52,7 @@ TARGET_USES_UEFI := true
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -60,6 +61,7 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)
 BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/dtbo.img
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_NO_KERNEL := false
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Kernel modules - Audio
 TARGET_MODULE_ALIASES += \
