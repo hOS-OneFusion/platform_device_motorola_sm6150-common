@@ -23,3 +23,11 @@ bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
+
+# Device Mask
+ro.build.fingerprint=google/redfin/redfin:13/TQ1A.230105.001/9292298:user/release-keys
+ro.product.brand=google
+ro.product.device=redfin
+ro.product.manufacturer=Google
+ro.product.model=Pixel 5
+ro.product.name=redfin
