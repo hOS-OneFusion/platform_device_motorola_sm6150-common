@@ -373,7 +373,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.sm6150-libperfmgr
+    android.hardware.power-service.pixel-libperfmgr
 
 # QCOM
 PRODUCT_COPY_FILES += \
