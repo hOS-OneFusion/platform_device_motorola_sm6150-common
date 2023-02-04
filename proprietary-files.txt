@@ -534,6 +534,10 @@ vendor/etc/media_profiles_V1_0.xml|ef393a5c2a609aba3bc35ff104f9f47bac309491
 vendor/lib/libmedia_ecoservice.so|5ffba5d7fc21686155246c9f390e1426b5a46044
 vendor/lib/libqcodec2.so|c61060e03b769e21d4c36f679c5ac7ae7865e4e0
 
+# Missing Blobs
+vendor/lib64/android.hardware.power-V1-ndk.so
+vendor/lib/android.hardware.power-V1-ndk.so
+
 # Moto Permissions
 product/etc/permissions/com.motorola.moto-uirefresh.xml
 product/etc/permissions/com.motorola.motodisplay.xml
