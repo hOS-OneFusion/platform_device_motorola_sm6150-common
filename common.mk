@@ -413,6 +413,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
+# Source
+PRODUCT_HOST_PACKAGES += \
+    aapt2 \
+    avbtool \
+    brotli \
+    debugfs \
+    signapk \
+    zipalign
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0 \
