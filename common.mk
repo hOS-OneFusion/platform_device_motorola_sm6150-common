@@ -435,11 +435,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
 
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
 	$(LOCAL_PATH) \
+    hardware/google/interfaces \
     hardware/google/pixel \
-    vendor/qcom/opensource/commonsys/display \    
+    vendor/qcom/opensource/commonsys/display \
     vendor/qcom/opensource/commonsys-intf/display \
     vendor/qcom/opensource/display \
     vendor/qcom/opensource/data-ipa-cfg-mgr \
@@ -458,8 +461,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Settings \
-    SystemUI
+    SettingsGoogle \
+    SystemUIGoogle
 
 # Telephony
 PRODUCT_PACKAGES += \

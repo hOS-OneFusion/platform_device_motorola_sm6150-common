@@ -557,6 +557,9 @@ vendor/bin/motobox
 # Perf
 vendor/bin/msm_irqbalance
 vendor/lib64/libqti-perfd-client.so
+vendor/lib64/android.hardware.power-V1-ndk.so
+vendor/lib/android.hardware.power-V1-ndk.so
+
 
 # Peripheral manager
 vendor/bin/pm-proxy
